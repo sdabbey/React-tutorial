@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Tutorial</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+   <div id="mydiv"></div>
+   <script type="text/babel">
+    class Car{
+        constructor(name){
+            this.brand = name;
+        }
+        present = () => {
+            return 'I have a ' + this.brand;
+        }
+    }
+
+    class Model extends Car{
+        constructor(name, mod){
+            super(name);
+            this.model = mod;
+        }
+        show = () => this.present() + ', it is a '+ this.model
+      
+    }
+    const mycar = new Model("Ford", "Mustang");
+    const container = document.getElementById("mydiv")
+    const root = ReactDOM.createRoot(container);
+    root.render(mycar.show())
+   
+   </script>
+</body>
+</html>
