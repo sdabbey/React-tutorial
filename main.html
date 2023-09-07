@@ -11,27 +11,29 @@
 <body>
    <div id="mydiv"></div>
    <script type="text/babel">
-    class Car{
-        constructor(name){
-            this.brand = name;
-        }
-        present = () => {
-            return 'I have a ' + this.brand;
-        }
+    function calculate(a, b){
+        const add = a + b;
+        const subtract = a - b;
+        const multiply = a * b;
+        const divide = a / b;
+        return [add, subtract, multiply, divide]
     }
-
-    class Model extends Car{
-        constructor(name, mod){
-            super(name);
-            this.model = mod;
-        }
-        show = () => this.present() + ', it is a '+ this.model
-      
+    const [add, subtract, multiply, divide ] = calculate(4,3)
+    
+    function show(){
+        return (
+            <div>
+                <p>Sum: {add}</p>
+                <p>Difference: {subtract}</p>
+                <p>Product: {multiply}</p>
+                <p>Quotient: {divide}</p>
+            </div>
+        )
     }
-    const mycar = new Model("Ford", "Mustang");
     const container = document.getElementById("mydiv")
     const root = ReactDOM.createRoot(container);
-    root.render(mycar.show())
+    root.render(show())
+
    
    </script>
 </body>
