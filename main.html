@@ -11,22 +11,28 @@
 <body>
    <div id="mydiv"></div>
    <script type="text/babel">
-    function calculate(a, b){
-        const add = a + b;
-        const subtract = a - b;
-        const multiply = a * b;
-        const divide = a / b;
-        return [add, subtract, multiply, divide]
+    const myVehicle = {
+    brand: 'Ford',
+    model: 'Mustang',
+    color: 'red'
     }
-    const [add, subtract, multiply, divide ] = calculate(4,3)
+
+    const updateMyVehicle = {
+    type: 'car',
+    year: 2021, 
+    color: 'yellow'
+    }
+
+    const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
     
     function show(){
         return (
             <div>
-                <p>Sum: {add}</p>
-                <p>Difference: {subtract}</p>
-                <p>Product: {multiply}</p>
-                <p>Quotient: {divide}</p>
+                <p>Brand: {myUpdatedVehicle.brand}</p>
+                <p>Model: {myUpdatedVehicle.model}</p>
+                <p>Color: {myUpdatedVehicle.color}</p>
+                <p>Type: {myUpdatedVehicle.type}</p>
+                <p>Year: {myUpdatedVehicle.year}</p>
             </div>
         )
     }
