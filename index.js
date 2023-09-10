@@ -11,3 +11,5 @@ console.log("Sum: "+ add)
 console.log("Difference: " + subtract)
 console.log("Product: " + multiply)
 console.log("Quotient: " + divide)
+
+export {add, subtract, multiply, divide}

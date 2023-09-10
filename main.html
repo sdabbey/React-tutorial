@@ -11,6 +11,7 @@
 <body>
    <div id="mydiv"></div>
    <script type="text/babel">
+    import {add, subtract, multiply, divide} from "./index.js";
     const myVehicle = {
     brand: 'Ford',
     model: 'Mustang',
@@ -33,6 +34,7 @@
                 <p>Color: {myUpdatedVehicle.color}</p>
                 <p>Type: {myUpdatedVehicle.type}</p>
                 <p>Year: {myUpdatedVehicle.year}</p>
+                <p>Add: {add}</p>
             </div>
         )
     }
