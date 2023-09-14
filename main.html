@@ -11,36 +11,14 @@
 <body>
    <div id="mydiv"></div>
    <script type="text/babel">
-    import {add, subtract, multiply, divide} from "./index.js";
-    const myVehicle = {
-    brand: 'Ford',
-    model: 'Mustang',
-    color: 'red'
+
+    function Car(props){
+        return <h1> I have a {props.color} car </h1>;
     }
 
-    const updateMyVehicle = {
-    type: 'car',
-    year: 2021, 
-    color: 'yellow'
-    }
-
-    const myUpdatedVehicle = {...myVehicle, ...updateMyVehicle}
-    
-    function show(){
-        return (
-            <div>
-                <p>Brand: {myUpdatedVehicle.brand}</p>
-                <p>Model: {myUpdatedVehicle.model}</p>
-                <p>Color: {myUpdatedVehicle.color}</p>
-                <p>Type: {myUpdatedVehicle.type}</p>
-                <p>Year: {myUpdatedVehicle.year}</p>
-                <p>Add: {add}</p>
-            </div>
-        )
-    }
     const container = document.getElementById("mydiv")
     const root = ReactDOM.createRoot(container);
-    root.render(show())
+    root.render(<Car color="blue"/>)
 
    
    </script>
