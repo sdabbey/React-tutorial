@@ -12,13 +12,30 @@
    <div id="mydiv"></div>
    <script type="text/babel">
 
-    function Car(props){
-        return <h1> I have a {props.color} car </h1>;
+    class Car extends React.Component{
+        constructor(props){
+            super(props);
+            this.state = {
+                brand: "Ford",
+                model: "Mustang",
+                color: "blue",
+                year: 1964
+            };
+        }
+        render(){
+            return (
+                <div>
+                    <h1>I have a {this.state.brand} in my garage</h1>
+                    <p>As you can see, the brand is {this.state.color} {this.state.model} from {this.state.year}</p>
+
+                </div>
+            )
+        }
     }
 
     const container = document.getElementById("mydiv")
     const root = ReactDOM.createRoot(container);
-    root.render(<Car color="blue"/>)
+    root.render(<Car/>)
 
    
    </script>
